@@ -125,7 +125,7 @@ nav a:hover {
     opacity: 0;
     visibility: hidden;
     transform: translateY(5px);  /* 讓下拉感覺滑動出現 */
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    transition: opacity 2s ease, transform 2s ease, visibility 2s;
 }
 
 /* 懸停顯示 */
