@@ -78,34 +78,72 @@ p {
 }
 
 
+nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: normal;
+    font-size: 1.1em;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* 下拉容器 */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
+/* 下拉按鈕 */
 .dropbtn {
     cursor: pointer;
     color: #007bff;
     font-size: 1.1em;
     text-decoration: none;
+    padding-bottom: 2px; /* 擴大 hover 區域 */
 }
 
+/* 下拉內容 */
 .dropdown-content {
     position: absolute;
-    top: 100%;
+    top: 100%;   /* 緊貼按鈕 */
     left: 0;
     background: #fff;
     min-width: 160px;
     border: 1px solid #eee;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    
+
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.15s ease-in-out;
+    transform: translateY(5px);  /* 讓下拉感覺滑動出現 */
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+/* 懸停顯示 */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
+}
+
+/* 下拉選項 */
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
