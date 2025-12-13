@@ -78,53 +78,34 @@ p {
 }
 
 
-/* 下拉選單容器 */
 .dropdown {
+    position: relative;
     display: inline-block;
-    position: relative; /* 讓 dropdown-content 絕對定位 */
 }
 
-/* 下拉按鈕 */
 .dropbtn {
-    text-decoration: none;
+    cursor: pointer;
     color: #007bff;
     font-size: 1.1em;
-    margin-right: 20px; /* 與 nav a 一致 */
-    cursor: pointer;
-}
-
-/* 下拉內容 */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* 下拉選單緊貼按鈕下方 */
-    left: 0;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    border: 1px solid #eee;
-    z-index: 1000;
-}
-
-/* 下拉內容連結樣式 */
-.dropdown-content a {
-    display: block;
-    padding: 10px 15px;
     text-decoration: none;
-    color: #333;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 160px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease-in-out;
 }
 
-/* 滑鼠懸停顯示下拉內容 */
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-/* 下拉按鈕滑鼠懸停顏色變化 */
-.dropdown:hover .dropbtn {
-    color: #0056b3;
-    text-decoration: underline;
+    opacity: 1;
+    visibility: visible;
 }
