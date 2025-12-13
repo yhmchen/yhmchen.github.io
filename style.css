@@ -79,63 +79,52 @@ p {
 }
 
 
-/* --- 6. Dropdown Menu 樣式 (新增區塊) --- */
-
-/* 1. 設置下拉菜單容器 */
+/* 下拉選單容器 */
 .dropdown {
-    /* 讓 nav 項目和 dropdown 容器排成一列 */
-    display: inline-block; 
-    /* 關鍵：設定為相對定位，讓子元素可以絕對定位 */
-    position: relative; 
-    /* 讓它與其他 nav 連結之間有間距 */
-    margin-right: 20px; 
+    display: inline-block;
+    position: relative; /* 讓 dropdown-content 絕對定位相對於此容器 */
 }
 
-/* 2. 設置主標籤 (High energy physics) */
+/* 下拉選單按鈕 */
 .dropbtn {
-    /* 確保主標籤繼承 nav a 的樣式 */
-    text-decoration: none; 
-    color: #007bff; 
-    font-weight: normal; 
+    text-decoration: none;
+    color: #007bff;
     font-size: 1.1em;
-    padding: 0; /* 移除額外的內邊距 */
-    display: block;
+    padding: 5px 0;
+    cursor: pointer;
 }
 
-/* 3. 設置下拉菜單內容 (預設隱藏) */
+/* 下拉內容 */
 .dropdown-content {
-    /* 關鍵：預設隱藏 */
-    display: none; 
-    /* 關鍵：絕對定位，讓它浮動在網頁上，不擠壓後面的元素 */
-    position: absolute; 
-    /* 設定背景和陰影，使其突出 */
-    background-color: #f9f9f9;
-    min-width: 180px; /* 確保寬度足夠顯示子連結文字 */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10; /* 確保它在最上層 */
-    top: 100%; /* 確保它從主連結正下方開始 */
-    padding-top: 5px; 
-    border: 1px solid #eee; /* 增加邊框增加質感 */
+    display: none; /* 預設隱藏 */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    z-index: 1000;
+    margin-top: 5px; /* 與按鈕保持距離 */
 }
 
-/* 4. 設置下拉菜單中的連結樣式 */
+/* 下拉內容連結樣式 */
 .dropdown-content a {
-    color: #333; /* 連結顏色使用深灰 */
-    padding: 8px 12px;
+    display: block;
+    padding: 10px 15px;
     text-decoration: none;
-    display: block; /* 讓每個連結佔滿一行 */
-    font-size: 1em;
-    margin-right: 0; /* 移除 nav a 繼承的右邊距 */
+    color: #333;
 }
 
-/* 5. 滑鼠移上去時的樣式 (Hover) */
 .dropdown-content a:hover {
-    background-color: #ddd;
-    color: #0056b3; /* 保持與 nav a:hover 一致 */
-    text-decoration: none;
+    background-color: #f1f1f1;
 }
 
-/* 6. 核心功能：滑鼠移到 .dropdown 容器時，顯示下拉內容 */
+/* 滑鼠懸停顯示下拉內容 */
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* 下拉按鈕滑鼠懸停顏色變化 */
+.dropdown:hover .dropbtn {
+    color: #0056b3;
+}
+
