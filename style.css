@@ -1,130 +1,91 @@
-我目前是這樣
 /* 1. 全局和基礎設定 */
 body {
-    /* 使用無襯線字體，看起來更現代和專業 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.6; /* 增加行距以提高可讀性 */
-    color: #333; /* 使用深灰色文字，比純黑柔和 */
-    margin: 0; /* 移除瀏覽器預設的外邊距 */
-    padding: 0;
-    background-color: #ffffff; /* 確保背景是白色 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
 }
 
 /* 2. 內容置中與最大寬度 (最重要) */
 main {
-    /* 設定最大寬度，避免文字在寬螢幕上過度延伸 */
-    max-width: 800px; 
-    /* 左右邊距自動，將內容區塊置中 */
-    margin: 0 auto; 
-    /* 增加頂部和底部內邊距 */
-    padding: 20px 20px 60px 20px; 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
 }
 
 /* 3. 標題樣式 */
 h1 {
-    font-size: 2.5em; /* 讓您的名字夠大 */
-    margin-bottom: 5px; /* 緊跟著簡介 */
+    font-size: 2.2em; /* 略微調整，讓它和內文標題「Tasuku Ono」更匹配 */
+    margin-top: 20px; /* 增加與上方導航欄的距離 */
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-h2 {
-    font-size: 1.5em;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-weight: bold; /* 確保 H2 標題是粗體 */
-}
-
-/* 4. 導航欄樣式 (Nav Bar) */
+/* 4. 導航欄樣式 (Nav Bar) - 匹配圖片中的單行、無分隔線樣式 */
 header {
-    /* 讓導航欄佔滿整個寬度 */
-    width: 100%;
-    /* 在導航欄下方增加細灰線，將它與主要內容分開 */
-    border-bottom: 1px solid #eee; 
-    padding: 15px 0;
-    margin-bottom: 20px;
+    width: 100%;
+    /* 移除圖片中沒有的 border-bottom: 1px solid #eee; */
+    padding: 15px 0;
+    margin-bottom: 0; /* 讓內容更靠近導航欄 */
 }
 
 nav {
-    /* 導航欄內容也應該置中 */
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px; 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* 確保所有導航項目在一行 */
+    align-items: baseline; /* 讓文字基線對齊 */
 }
 
+/* 導航欄中所有的連結樣式 */
 nav a {
-    /* 移除連結的底線 */
-    text-decoration: none; 
-    /* 使用學術界常見的連結藍色 */
-    color: #007bff; 
-    font-weight: normal; 
-    font-size: 1.1em;
-    margin-right: 20px; /* 增加連結間距 */
+    text-decoration: none;
+    color: #007bff;
+    font-weight: normal;
+    font-size: 1em; /* 圖片中的連結文字較小 */
+    margin-right: 20px;
+}
+
+/* 圖片中，左上角的「Tasuku Ono」文字是黑色的，不是連結藍色 */
+.site-title {
+    color: #333; /* 讓網站標題變為黑色 */
+    font-weight: normal; /* 不做特別粗體 */
+    font-size: 1em;
+    margin-right: 30px; /* 增加與後面連結的間隔 */
 }
 
 nav a:hover {
-    color: #0056b3;
-    text-decoration: underline; /* 滑鼠移上去時顯示底線 */
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 /* 5. 列表和段落 */
 ul {
-    padding-left: 20px;
+    padding-left: 20px;
+    list-style-type: disc; /* 確保是實心圓點 */
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-
-/* 下拉選單容器 */
-.dropdown {
-    display: inline-block;
-    position: relative; /* 讓 dropdown-content 絕對定位相對於此容器 */
-}
-
-/* 下拉選單按鈕 */
-.dropbtn {
-    text-decoration: none;
+/* 連結樣式，確保內文中的連結也是藍色的 */
+main a {
     color: #007bff;
-    font-size: 1.1em;
-    padding: 5px 0;
-    cursor: pointer;
-}
-
-/* 下拉內容 */
-.dropdown-content {
-    display: none; /* 預設隱藏 */
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    border: 1px solid #eee;
-    z-index: 1000;
-    margin-top: 5px; /* 與按鈕保持距離 */
-}
-
-/* 下拉內容連結樣式 */
-.dropdown-content a {
-    display: block;
-    padding: 10px 15px;
     text-decoration: none;
-    color: #333;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+main a:hover {
+    text-decoration: underline;
 }
 
-/* 滑鼠懸停顯示下拉內容 */
-.dropdown:hover .dropdown-content {
-    display: block;
+/* 6. 移除所有與 Dropdown 相關的樣式，因為圖片中沒有用到 */
+.dropdown, .dropbtn, .dropdown-content {
+    /* 不使用 */
 }
-
-/* 下拉按鈕滑鼠懸停顏色變化 */
-.dropdown:hover .dropbtn {
-    color: #0056b3;
-}
-
