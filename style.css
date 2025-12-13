@@ -1,0 +1,78 @@
+/* 1. 全局和基礎設定 */
+body {
+    /* 使用無襯線字體，看起來更現代和專業 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6; /* 增加行距以提高可讀性 */
+    color: #333; /* 使用深灰色文字，比純黑柔和 */
+    margin: 0; /* 移除瀏覽器預設的外邊距 */
+    padding: 0;
+    background-color: #ffffff; /* 確保背景是白色 */
+}
+
+/* 2. 內容置中與最大寬度 (最重要) */
+main {
+    /* 設定最大寬度，避免文字在寬螢幕上過度延伸 */
+    max-width: 800px; 
+    /* 左右邊距自動，將內容區塊置中 */
+    margin: 0 auto; 
+    /* 增加頂部和底部內邊距 */
+    padding: 20px 20px 60px 20px; 
+}
+
+/* 3. 標題樣式 */
+h1 {
+    font-size: 2.5em; /* 讓您的名字夠大 */
+    margin-bottom: 5px; /* 緊跟著簡介 */
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold; /* 確保 H2 標題是粗體 */
+}
+
+/* 4. 導航欄樣式 (Nav Bar) */
+header {
+    /* 讓導航欄佔滿整個寬度 */
+    width: 100%;
+    /* 在導航欄下方增加細灰線，將它與主要內容分開 */
+    border-bottom: 1px solid #eee; 
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+nav {
+    /* 導航欄內容也應該置中 */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+nav a {
+    /* 移除連結的底線 */
+    text-decoration: none; 
+    /* 使用學術界常見的連結藍色 */
+    color: #007bff; 
+    font-weight: normal; 
+    font-size: 1.1em;
+    margin-right: 20px; /* 增加連結間距 */
+}
+
+nav a:hover {
+    color: #0056b3;
+    text-decoration: underline; /* 滑鼠移上去時顯示底線 */
+}
+
+/* 5. 列表和段落 */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 20px;
+}
