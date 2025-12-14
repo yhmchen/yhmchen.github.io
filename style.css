@@ -1,100 +1,222 @@
-/* 1. 全局和基礎設定 */
+/* ======================== */
+/* 1. 基礎設定與字體 */
+/* ======================== */
 body {
-    /* 使用無襯線字體，看起來更現代和專業 */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.6; /* 增加行距以提高可讀性 */
-    color: #333; /* 使用深灰色文字，比純黑柔和 */
-    margin: 0; /* 移除瀏覽器預設的外邊距 */
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
     padding: 0;
-    background-color: #ffffff; /* 確保背景是白色 */
+    background-color: #f7f7f7; /* 輕微的灰色背景讓內容更突出 */
 }
 
-/* 2. 內容置中與最大寬度 (最重要) */
-main {
-    /* 設定最大寬度，避免文字在寬螢幕上過度延伸 */
-    max-width: 800px; 
-    /* 左右邊距自動，將內容區塊置中 */
-    margin: 0 auto; 
-    /* 增加頂部和底部內邊距 */
-    padding: 20px 20px 60px 20px; 
-}
-
-/* 3. 標題樣式 */
-h1 {
-    font-size: 2.5em; /* 讓您的名字夠大 */
-    margin-bottom: 5px; /* 緊跟著簡介 */
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-weight: bold; /* 確保 H2 標題是粗體 */
-}
-
-/* 4. 導航欄樣式 (Nav Bar) */
-header {
-    /* 讓導航欄佔滿整個寬度 */
-    width: 100%;
-    /* 在導航欄下方增加細灰線，將它與主要內容分開 */
-    border-bottom: 1px solid #eee; 
-    padding: 15px 0;
-    margin-bottom: 20px;
-}
-
-nav {
-    /* 導航欄內容也應該置中 */
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px; 
-}
-
-nav a {
-    /* 移除連結的底線 */
-    text-decoration: none; 
-    /* 使用學術界常見的連結藍色 */
-    color: #007bff; 
-    font-weight: normal; 
-    font-size: 1.1em;
-    margin-right: 20px; /* 增加連結間距 */
-}
-
-nav a:hover {
-    color: #0056b3;
-    text-decoration: underline; /* 滑鼠移上去時顯示底線 */
-}
-
-/* 5. 列表和段落 */
-ul {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-p {
-    margin-bottom: 20px;
-}
-
-
-nav {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-nav a {
-    text-decoration: none;
+/* 連結樣式 */
+a {
     color: #007bff;
-    font-weight: normal;
-    font-size: 1.1em;
-    margin-right: 20px;
+    text-decoration: none;
 }
 
-nav a:hover {
+a:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+
+/* ======================== */
+/* 2. 頂部圖片區 (Hero Section) */
+/* ======================== */
+.hero-section {
+    /* 請將這裡的 URL 替換成您圖片的實際路徑或 Base64 */
+    background-image: url('your-background-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* 設定高度以顯示背景圖片 */
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4); /* 增加透明黑色層以確保文字可讀 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay h1 {
+    font-size: 3em;
+    font-weight: 300; /* 讓字體看起來更細緻 */
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================== */
+/* 3. 核心雙欄佈局 (Container) */
+/* ======================== */
+.container {
+    max-width: 1200px; /* 容器最大寬度 */
+    margin: -80px auto 40px auto; /* 負邊距讓內容區塊向上覆蓋 Hero 區塊 */
+    padding: 0 20px;
+    display: grid;
+    /* 定義 Grid 欄位: 左欄 250px，右欄自動佔滿剩餘空間 */
+    grid-template-columns: 250px 1fr; 
+    gap: 40px; /* 欄位間距 */
+}
+
+/* ======================== */
+/* 4. 左側資訊欄 (Sidebar) */
+/* ======================== */
+.sidebar {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 增加陰影使其浮起 */
+    position: sticky; /* 讓側邊欄在滾動時固定在頂部 */
+    top: 20px;
+    align-self: start; /* 確保它不會延伸到 main-content 的底部 */
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto; /* 置中 */
+    overflow: hidden;
+    border-radius: 50%; /* 圓形圖片 */
+    border: 3px solid #007bff; /* 藍色邊框 */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar h2 {
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.sidebar .title-role {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.info-list {
+    list-style: none; /* 移除預設的點 */
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    margin-bottom: 12px;
+}
+
+.info-list a {
+    color: #333; /* 讓側邊欄連結使用深色，看起來更像純文字 */
+    font-size: 1em;
+}
+
+/* ======================== */
+/* 5. 右側主要內容區 (Main Content) */
+/* ======================== */
+.main-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 右上角導航列 */
+.main-nav {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav a {
+    font-size: 1.05em;
+    margin-left: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.welcome-section h3 {
+    font-size: 2em;
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 確保段落間距 */
+.welcome-section p {
+    margin-bottom: 25px;
+}
+
+/* ======================== */
+/* 6. 響應式設計 (RWD): 適用於手機和小螢幕 */
+/* ======================== */
+@media (max-width: 900px) {
+    .container {
+        /* 在小螢幕上，將 Grid 變成單欄 */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        padding-top: 20px; /* 移除負邊距效果 */
+        margin-top: 0;
+    }
+
+    .sidebar {
+        /* 在手機上，讓側邊欄在頂部正常顯示，不固定 */
+        position: static; 
+        text-align: center;
+    }
+
+    .profile-image {
+        /* 手機上居中顯示 */
+        margin: 0 auto 15px auto;
+    }
+
+    .sidebar h2, .sidebar .title-role {
+        text-align: center;
+    }
+
+    .main-nav {
+        /* 手機上導航列改為置中或左對齊 */
+        text-align: center;
+        /* 使用 flexbox 讓連結換行 */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav a {
+        margin: 5px 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
 }
 
 /* 下拉容器 */
