@@ -1,3 +1,16 @@
+.hero-section,
+.hero-overlay {
+    pointer-events: none !important;
+}
+
+.main-nav {
+    position: relative;
+    z-index: 99999 !important;
+}
+
+
+
+
 /* ======================== */
 /* 1. 基礎設定與字體 */
 /* ======================== */
